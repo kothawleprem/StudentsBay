@@ -51,5 +51,6 @@ python manage.py runserver
 ```
 
 Locally available at 127.0.0.1:8000
+Contact Form is in About section : http://127.0.0.1:8000/about
 
 Thanks :raised_hands:
