@@ -45,7 +45,7 @@ def register(request):
 
 def handleregister(request):
     if request.method == 'POST':
-        uname = request.POST['name']
+        uname = request.POST['uname']
         name = request.POST['name']
         contact = request.POST['contact']
         email = request.POST['email']
@@ -64,7 +64,7 @@ def handleregister(request):
         ouruser.name = name
         ouruser.save()
         messages.success(request,"Account created!!!")
-        return redirect('home')
+        return redirect('ulogin')
     else:
         return HttpResponse('Not found')
 

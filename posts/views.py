@@ -1,6 +1,6 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from django.contrib import messages
-from .models import Post
+from .models import Post,PostComment
 
 # Create your views here.
 def postHome(request):
@@ -13,8 +13,24 @@ def postHome(request):
 
 def post(request, slug):
     post = Post.objects.filter(slug=slug).first()
-    print(post)
+    post.views = post.views + 1
+    post.save()
+    comments = PostComment.objects.filter(post=post)
+    print(request.user)
     context = {
         'post' : post,
+        'comments' : comments,
+        'user' : request.user,
     }
     return render(request,'posts/post.html',context)
+
+
+def postComment(request):
+    if request.method == "POST":
+        comment = request.POST.get("comment")
+        user = request.user
+        postSno = request.POST.get("postSno")
+        post = Post.objects.get(sno=postSno)
+        comment = PostComment(comment=comment,user=user,post=post)
+        comment.save()
+    return redirect(f'/posts/{post.slug}')

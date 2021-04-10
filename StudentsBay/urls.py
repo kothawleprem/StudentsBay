@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-
+admin.site.site_header = "StudentsBay Admin"
+admin.site.site_title = "StudentsBay Admin Panel"
+admin.site.index_title = "Hey Admin!!!"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),

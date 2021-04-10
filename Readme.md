@@ -11,8 +11,9 @@ python3 -m venv senv
 To start the virtual environment on Windows:
 
 ```sh
-name\Scripts\activate
+senv\Scripts\activate
 ```
+
 
 Clone this repository:
 
@@ -22,6 +23,7 @@ git clone https://github.com/kothawleprem/StudentsBay.git
 
 Enter into the directory:
 
+
 Install requirements:
 
 ```sh
@@ -29,21 +31,17 @@ pip install -r requirements.txt
 ```
 
 Migrations:
-
 ```sh
 py manage.py makemigrations
 ```
-
 ```sh
 py manage.py migrate
 ```
 
 Create Super User:
-
 ```sh
 py manage.py createsuperuser
 ```
-
 -> Enter any required information.
 
 Run:
@@ -53,5 +51,6 @@ python manage.py runserver
 ```
 
 Locally available at 127.0.0.1:8000
+Contact Form is in About section : http://127.0.0.1:8000/about
 
 Thanks :raised_hands:

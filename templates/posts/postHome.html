@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block title %} PostHome {% endblock title %}
+
+
+
+
+
 {% block homeactive %}active{% endblock homeactive %}
 {% block body %}
 
@@ -34,11 +39,12 @@
                     <br>
                     <div class="card popular_posts">
                         <div class="card-body">
-                            <h6>Publsihed by {{post.publisher}}</h6>
+                            <h6>Publsihed by {{post.publisher}} </h6>
                             <h4 class="card-title">{{post.title}}</h4>
                             <hr class="pop_post_hr" align="left">
                             <br>
-                            <p class="card-text">{{post.content| truncatechars:300}}</p>
+                            <p class="card-text">
+                            <div class="preview">{{post.content| safe |truncatechars:300}}</div></p>
                             <br>
                             <a href="{{post.slug}}" class="btn btn-info">Continue reading</a>
                         </div>
@@ -47,6 +53,13 @@
             </div>
         </div>
         {% endfor %}
+              <script>
+      let previews=document.getElementsByClassName('preview');
+      Array.from(previews).forEach((element))=>{
+          element.innerHTML=element.innerText;
+      })
+      </script>
+      
 {% endblock body %}
 
 

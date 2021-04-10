@@ -1,13 +1,47 @@
 {% extends 'base.html' %}
 {% block title %} Post {% endblock title %}
 {% block body %}
+{% load humanize %}
 
 <div class="container my-3">
 <h2 class="blog-post-title">{{post.title}}
 </h2>
 <p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.publisher}}</a><p>
-<p>{{post.content}}</p>
+<p>{{post.content | safe}}</p>
 </div>
+{% if user.is_authenticated %}
+ <div class="container">
+      <h2> Comments ({{comments.count}})</h2>
+     <form action="/posts/postComment" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleInputEmail1">Post Comment </label>
+            <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
+        </div>
+        <input type="hidden" name="postSno" value="{{post.sno}}">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% for comment in comments %}
+    <div class="row my-3">
+        <div class="col-md-11 "> <i class="fas fa-user-alt"></i> 
+        <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}}
+        <div>   {{comment.comment}} </div>
+    </div>
+    </div>
+    {% endfor %}
+{% else %}
+ <div class="container">
+      <h2> Comments ({{comments.count}})</h2>
+Please Login to comment
+{% for comment in comments %}
+    <div class="row my-3">
+        <div class="col-md-11 "> <i class="fas fa-user-alt"></i> 
+        <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}}
+        <div>   {{comment.comment}} </div>
+    </div>
+    </div>
+    {% endfor %}
+{% endif %}
 {% endblock body %}
 
 
