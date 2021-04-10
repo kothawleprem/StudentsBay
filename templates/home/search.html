@@ -1,33 +1,26 @@
 {% extends 'base.html' %}
-{% block title %} PostHome {% endblock title %}
-{% block homeactive %}active{% endblock homeactive %}
+{% block title %} Search {% endblock title %}
+{% block searchactive %}active{% endblock searchactive %}
 {% block body %}
 
-<style>
-.popular_posts {
-    border-radius: 20px;
-    padding: 20px;
-    border: none;
-    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
-}
-
-.pop_post_hr {
-    border: 2px solid #000066;
-    margin-top: 25px;
-    width: 25%;
-}
-
-.btn-info {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 15px;
-}
-</style>
-
 <div class="container my-3">
-<h2><i class="fas fa-fire"></i> &nbsp; All Posts</h2>
+{% if allPosts|length < 1 %}
+   <p>No search results</p>
+    Your search query : <b>{{query}}</b> did not match any documents. <br>
+    Suggestions:
+    <ul>
+    <li>Make sure that all words are spelled correctly.</li>
+    <li>Try more general keywords.</li>
+   <li> Try fewer keywords.</li>
+   <li> Try different keywords.</li>
+    </li>
+    </ul>
+
+
+    {% endif %}
 {% for post in allPosts  %}
-        <div class="container">
+    
+         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <hr>
@@ -47,6 +40,8 @@
             </div>
         </div>
         {% endfor %}
+    </div>
+
 {% endblock body %}
 
 

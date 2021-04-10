@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock title %}
+{% block body %}
+
+ <style>
+            body {
+                background-image: url("media/util.jpg");
+                background-size: cover;
+                margin-bottom: 50px !important;
+            }
+
+            ::placeholder {
+                color: #fff !important;
+            }
+
+            .fa-envelope {
+                color: #fff;
+            }
+
+            .fa-unlock-alt {
+                color: #fff;
+            }
+
+            input:focus { 
+                outline: none !important;
+                background-color: rgba(255, 255, 255, 0) !important;
+                color: #fff !important;
+            }
+        </style>
+        <br><br><br><br><br>
+        <div class="container">
+            <div class="row">
+                <div class="card login_card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <img src="media/mylogin.png" alt="Card image" style="width:100%">
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <h2 align="center">LOGIN</h2>
+                                <hr class="login_hr">
+                                <br>
+                                <form action='/handlelogin' method='post'>
+                                {% csrf_token %}
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <input type="text" class="form-control login_form" name="loginuname"  placeholder="Username">
+                                    </div>
+                                    <br>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <i class="fas fa-unlock-alt"></i>
+                                        </div>
+                                        <input type="text" class="form-control login_form" name="loginpassword" placeholder="Password">
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block">Log In</button>
+                                </form>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

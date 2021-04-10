@@ -1,8 +1,100 @@
 {% extends 'base.html' %}
 {% block title %} About {% endblock title %}
+{% block aboutactive %}active{% endblock aboutactive %}
 {% block body %}
 
+<style>
+
+.fa-user {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 8px;
+}
+
+.fa-phone-alt {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.fa-envelope {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.fa-comment-dots {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.contact_form {
+    border: none;
+    margin-left: 5px;
+    border-bottom: 2.5px solid blue;
+}
+
+.contact_form:hover {
+    border-bottom: 2.5px solid red;
+    transition: 0.5s;
+}
+</style>
+
 <div class="container">
+            <h2><i class="fas fa-file"></i> &nbsp; Contact</h2>
+            <hr>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="post" action="/about" >
+                    {% csrf_token %}
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <input type="text" class="form-control contact_form" name="name" placeholder="Your Name">
+                        </div>
+                        <br>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <input type="text" class="form-control contact_form" name="phone" placeholder="Contact Number">
+                        </div>
+                        <br>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <input type="text" class="form-control contact_form" name="email" placeholder="Email ID">
+                        </div>
+                        <br>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <textarea type="text" class="form-control contact_form" name="content" placeholder="Message"></textarea>
+                        </div>
+                        <center>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        </center>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+{% comment %} <div class="container">
 <h1>Contact StudentsBay!!!</h1>
 <form method="post" action="/about" >
 {% csrf_token %}
@@ -27,5 +119,5 @@
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-</div>
+</div> {% endcomment %}
 {% endblock body %}

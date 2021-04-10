@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,62 +12,312 @@
       rel="stylesheet"
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
+
     />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{%  static  '/css/styles.css'  %}">
 
     <title>{% block title %}{% endblock title %}</title>
   </head>
+<style>
+#navs {
+    background-color: #fff;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+}
 
+.navbar-nav {
+    padding: 10px;
+}
+
+.nav-link {
+    color: #000066 !important;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.search {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+    margin-left: 10px;
+}
+
+.search_btn {
+    background-color: #000066;
+    height: 40px;
+    width: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+}
+
+.intro_div {
+    height: 500px;
+    background-image: url("../assets/images/intro.jpg");
+    background-size: cover;
+}
+
+.intro_card {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2.5px rgba(0,0,0,0.5);
+    height: 400px;
+    padding: 20px;
+}
+
+.intro_hr {
+    border: 2px solid #fff;
+    /* margin-top: 25px; */
+    width: 25%;
+}
+
+.fa-arrow-alt-circle-down {
+    color: red !important;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+}
+
+.posts {
+    height: 70px;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 3px solid blue;
+    /* width: 800px; */
+}
+
+.posts:hover {
+    border-bottom: 3px solid red;
+    transition: 0.5s;
+}
+
+.create_btn {
+    background-image: linear-gradient(to bottom right, #003366, #00cccc);
+    width: 130px;
+    border-radius: 15px;
+    color: #fff;
+    border: none;
+    height: 60px;
+}
+
+.create_btn:hover {
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.3);
+    color: #fff;
+    transition: 0.5s;
+}
+
+.provide_card {
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    height: 400px;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+}
+
+.popular_posts {
+    border-radius: 20px;
+    padding: 20px;
+    border: none;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+}
+
+.pop_post_hr {
+    border: 2px solid #000066;
+    margin-top: 25px;
+    width: 25%;
+}
+
+.btn-info {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.fa-user {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 8px;
+}
+
+.fa-phone-alt {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.fa-envelope {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.fa-comment-dots {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.fa-unlock-alt {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.fa-university {
+    font-size: 25px;
+    color: #000080;
+    margin-top: 5px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.contact_card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    padding: 10px;
+}
+
+.contact_form {
+    border: none;
+    background-color: #f0f2f2;
+    margin-left: 5px;
+    border-bottom: 2.5px solid blue;
+}
+
+.contact_form:hover {
+    border-bottom: 2.5px solid red;
+    transition: 0.5s;
+}
+
+.contact_div {
+    padding-top: 30px;
+    padding: 30px;
+    background-color: #f0f2f2;
+}
+
+.btn-primary {
+    width: 150px;
+    height: 60px;
+    border-radius: 15px;
+}
+
+.about_card {
+    background-color: #f0f2f2;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+}
+
+.login_card {
+    background-color: rgba(51, 153, 255, 0.3);
+    color: #fff;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+}
+
+.login_form {
+    border: none;
+    background-color:  rgba(255, 255, 255, 0);
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    margin-left: 15px;
+}
+
+.login_hr {
+    border: 2px solid #fff;
+    text-align: center;
+    width: 40%;
+}
+
+.btn-success {
+    /* width: 95px;
+    height: 50px; */
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: #000066;
+}
+
+.btn-success:hover {
+    background-color: blueviolet;
+}
+</style>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">StudentsBay</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/posts">Posts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">About</a>
-            </li>
-            
-            </li>
-           
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
+        <nav class="navbar navbar-expand-md fixed-top" id="navs">
+            <a class="navbar-brand" href="/"  style="color: #000066; margin-left: 10px; margin-top: 5px;">
+                <h1 style="font-family: Cookie;">Students Bay <i class="fas fa-graduation-cap"></i></h1>
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
             </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    
-      {% for message in messages %}
-    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
-  {{message}}
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-      {% endfor %}
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item {% block postsactive %}{% endblock postsactive %}">
+                        <a class="nav-link" href="/posts"><h5><i class="fas fa-mail-bulk"></i> &nbsp; Posts</h5></a>
+                    </li>
+                    <br>
+                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html"><h5><i class="fas fa-user-alt"></i> &nbsp; Hello, {{request.user}}</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout"><h5><i class="fas fa-sign-in-alt"></i> &nbsp; Log Out</h5></a>
+                    </li>
+                    <br>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register"><h5><i class="fas fa-user-plus"></i> &nbsp; Register</h5></a>
+                    </li>
+                    {% endif %}
+                    <br>
+                    <form method="get" action="/search" class="d-flex">
+                        <input class="form-control search" type="search" placeholder="Search" name="query" id="query">
+                        <button class="search_btn" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+   
+        <br><br><br>
+     
 
     {% block body %} {% endblock body %}
 
