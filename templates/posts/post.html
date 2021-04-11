@@ -2,46 +2,81 @@
 {% block title %} Post {% endblock title %}
 {% block body %}
 {% load humanize %}
+<style>
+    .comment_box {
+    border: none;
+    height: 50px;
+    border-radius: 0px;
+    border-bottom: 2px solid #ff0000;
+}
 
-<div class="container my-3">
-<h2 class="blog-post-title">{{post.title}}
-</h2>
-<p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.publisher}}</a><p>
-<p>{{post.content | safe}}</p>
-</div>
-{% if user.is_authenticated %}
- <div class="container">
-      <h2> Comments ({{comments.count}})</h2>
-     <form action="/posts/postComment" method="post">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="exampleInputEmail1">Post Comment </label>
-            <input type="text" class="form-control" name="comment" placeholder="Enter comment here">
-        </div>
-        <input type="hidden" name="postSno" value="{{post.sno}}">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    {% for comment in comments %}
-    <div class="row my-3">
-        <div class="col-md-11 "> <i class="fas fa-user-alt"></i> 
-        <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}}
-        <div>   {{comment.comment}} </div>
-    </div>
-    </div>
-    {% endfor %}
+.comment_submit {
+    background-color: #000066;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+    width: 150px;
+}
+</style>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card post_card">
+                        <div class="card-body">
+        
+                            <h2 class="blog-post-title"><i>{{post.title}}</i></h2>
+                            <p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.publisher}}</a></p>
+                            <hr>
+                            <br>
+                            <h6>{{post.content}}</h6>
+                            <br>
+                            {% if user.is_authenticated %}
+                            <h3>Comments ({{comments.count}})</h3>
+                            <form action="/posts/postComment" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" class="form-control comment_box" name="comment" placeholder="Comment something">
+                                </div>
+                                <input type="hidden" name="postSno" value="{{post.sno}}">
+                                <button type="submit" class="comment_submit btn-lg">Submit</button>
+                            </form>
 {% else %}
- <div class="container">
-      <h2> Comments ({{comments.count}})</h2>
 Please Login to comment
-{% for comment in comments %}
-    <div class="row my-3">
-        <div class="col-md-11 "> <i class="fas fa-user-alt"></i> 
-        <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}}
-        <div>   {{comment.comment}} </div>
-    </div>
-    </div>
-    {% endfor %}
 {% endif %}
+<!-- <form action='/posts/emailme' method='post'>
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <i class="fas fa-email"></i>
+        </div>
+        <!-- <input type="text" class="form-control login_form" name="{{post.content | safe}}"  placeholder="Email"> 
+    </div>
+    <button type="submit" class="btn btn-success btn-lg btn-block" name="{{post.content | safe}}">Submit</button> -->
+
+<div class="row">
+    <div class="col-md-12">
+        <h3>Comments ({{comments.count}})</h3>
+
+    </div>
+</div>
+
+{% for comment in comments %}
+    <div class="row">
+        <div class="col-md-12">
+            <h4><i class="fas fa-user-alt"></i> &nbsp; <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}} </h4>
+            <hr>
+            <h6>{{comment.comment}}</h6>
+        </div>
+    </div>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
 {% endblock body %}
 
 

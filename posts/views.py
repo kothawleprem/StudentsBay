@@ -4,19 +4,16 @@ from .models import Post,PostComment
 
 # Create your views here.
 def postHome(request):
-    allPosts = Post.objects.all()
+    allPosts = Post.objects.all().order_by('-sno')
     context = {
         'allPosts' : allPosts,
     }
-    print(allPosts)
     return render(request,'posts/postHome.html',context)
 
 def post(request, slug):
     post = Post.objects.filter(slug=slug).first()
-    post.views = post.views + 1
     post.save()
-    comments = PostComment.objects.filter(post=post)
-    print(request.user)
+    comments = PostComment.objects.filter(post=post).order_by('-sno')
     context = {
         'post' : post,
         'comments' : comments,
@@ -34,3 +31,10 @@ def postComment(request):
         comment = PostComment(comment=comment,user=user,post=post)
         comment.save()
     return redirect(f'/posts/{post.slug}')
+
+def emailme(request):
+    if request.method == "POST":
+        content = request.POST.get("uemail")
+        # content = request.POST.get("value")
+        print(content)
+    return redirect(f'/posts')
