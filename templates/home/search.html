@@ -6,7 +6,7 @@
 <div class="container my-3">
 {% if allPosts|length < 1 %}
    <p>No search results</p>
-    Your search query : <b>{{query}}</b> did not match any documents. <br>
+    Your search query : <b>{{query}}</b> did not match any posts. <br>
     Suggestions:
     <ul>
     <li>Make sure that all words are spelled correctly.</li>
@@ -31,9 +31,9 @@
                             <h4 class="card-title">{{post.title}}</h4>
                             <hr class="pop_post_hr" align="left">
                             <br>
-                            <p class="card-text">{{post.content| truncatechars:300}}</p>
+                            <p class="card-text">{{post.content| safe | truncatechars:300}}</p>
                             <br>
-                            <a href="{{post.slug}}" class="btn btn-info">Continue reading</a>
+                            <a href="posts/{{post.slug}}" class="btn btn-info">Continue reading</a>
                         </div>
                     </div>
                 </div>

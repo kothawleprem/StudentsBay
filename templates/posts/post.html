@@ -26,7 +26,7 @@
                         <div class="card-body">
         
                             <h2 class="blog-post-title"><i>{{post.title}}</i></h2>
-                            <p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.publisher}}</a></p>
+                            <p class="blog-post-meta">{{post.timeStamp}} by <a>{{post.publisher}}</a></p>
                             <hr>
                             <br>
                             <h6>{{post.content | safe}}</h6>
@@ -64,7 +64,7 @@ Please Login to comment
 {% for comment in comments %}
     <div class="row">
         <div class="col-md-12">
-            <h4><i class="fas fa-user-alt"></i> &nbsp; <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}} </h4>
+            <h5><i class="fas fa-user-alt"></i> &nbsp; <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}} </h5>
             <hr>
             <h6>{{comment.comment}}</h6>
         </div>

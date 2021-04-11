@@ -22,7 +22,6 @@ def home(request):
     else:
         contact = Contact(name=name,email=email,phone=phone,content=content)
         contact.save()
-        messages.success(request,'Thank You!! Message Sent.')
     return render(request,'home/home.html')
 
 def search(request):
@@ -63,7 +62,6 @@ def handleregister(request):
         ouruser = User.objects.create_user(uname,email,password1)
         ouruser.name = name
         ouruser.save()
-        messages.success(request,"Account created!!!")
         return redirect('ulogin')
     else:
         return HttpResponse('Not found')
@@ -81,7 +79,6 @@ def handlelogin(request):
             login(request,user)
             return redirect('home')
         else:
-            messages.success(request,"Invalid Credentials, Please try again!")
             return redirect('ulogin')
     print("Not POST")
     return HttpResponse('handlelogin')

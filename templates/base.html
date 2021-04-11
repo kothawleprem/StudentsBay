@@ -273,6 +273,45 @@
 .btn-success:hover {
     background-color: blueviolet;
 }
+
+.about_card {
+    background-color: #f0f2f2;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    padding: 15px;
+    padding-left: 20px;
+}
+
+.bio {
+    margin-top: 10px;
+}
+
+.proj_btn {
+    background-color: #000066;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+    height: 55px;
+    padding: 10px;
+}
+
+.proj_btn > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.fa-github {
+    font-size: 55px;
+    color: #000;
+}
+
+.fa-linkedin-in {
+    margin-left: 20px;
+    font-size: 55px;
+    color: #0077b5;
+}
+
 </style>
   <body>
         <nav class="navbar navbar-expand-md fixed-top" id="navs">
@@ -294,7 +333,7 @@
                     <br>
                      {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html"><h5><i class="fas fa-user-alt"></i> &nbsp; Hello, {{request.user}}</h5></a>
+                        <a class="nav-link" ><h5><i class="fas fa-user-alt"></i> &nbsp; Hello, {{request.user}}</h5></a>
                     </li>
                     <br>
                     <li class="nav-item">

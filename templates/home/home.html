@@ -109,27 +109,25 @@
     transition: 0.5s;
 }
 </style>
- <div class="jumbotron intro_div">
+  <div class="jumbotron intro_div">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <div class="card intro_card">
                             <div class="card-body">
                                 <h1 style="font-family: Cookie;">Students Bay &nbsp; <i class="fas fa-graduation-cap"></i></h1>
-                                <hr>
-                                <p>Your very own college portal!</p>
+                                <hr class="intro_hr" align="left">
+                                <br>
+                                <h6>
+                                    Students Bay is your very own portal for all alerts and notifications concerned with your college.
+                                    <br><br><br>
+                                    Find out what features are we providing mentioned below...
+                                </h6>
+                                <br>
+                                <h1><i class="fas fa-arrow-alt-circle-down"></i></h1>
                             </div>
                         </div>  
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card intro_card">
-                            <div class="card-body">
-                                <h1>About Students Bay</h1>
-                                <hr>
-                                <p>About us</p>
-                            </div>
-                        </div>
-                    </div>         
+                    </div>      
                 </div>
             </div> 
         </div>
@@ -171,13 +169,14 @@
 
         <br><br><br>
 
-<div class="container">
-            <h2><i class="fas fa-file"></i> &nbsp; Contact</h2>
-            <hr>
-            <br>
-            <div class="row">
-                <div class="col-md-12">
-                    <form method="post" action="/" >
+        <div class="contact_div">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2><i class="fas fa-file"></i> &nbsp; Contact</h2>
+                        <hr>
+                        <br>
+<form method="post" action="/" >
                     {% csrf_token %}
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -209,11 +208,41 @@
                         <center>
                         <button type="submit" class="btn btn-info">Submit</button>
                         </center>
-                        
-                    </form>
+                        </form>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="card about_card">
+                            <div class="card-body">
+                                <h2><i class="fas fa-address-card"></i> &nbsp; About Us</h2>
+                                <hr>
+                                <br>
+                                <h4 style="font-family: Spectral SC;">Bug Hunters <i class="fas fa-bug"></i></h4>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6 bio">
+                                        <h5>Prem Kothawle</h5>
+                                        <hr>
+                                        <a href="https://github.com/kothawleprem" target="_blank"><i class="fab fa-github"></i></a>
+                                        <a href="https://in.linkedin.com/public-profile/in/premkothawle?challengeId=AQGGrVILuc7mNQAAAXdIXRqTv00S5rmv_j21Vz_wRu8nQDt14KyNpn4hUdXcizuLx17BkvKyp97b-AttVulTKk_tZaVB0qZbUg&submissionId=98038d91-ee5b-5e16-1547-bd78670a3a16" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                    
+                                    <div class="col-md-6 bio">
+                                        <h5>Chinmay Karmokar</h5>
+                                        <hr>
+                                        <a href="https://github.com/chinmaykarmokar" target="_blank"><i class="fab fa-github"></i></a>
+                                        <a href="https://www.linkedin.com/in/chinmay-karmokar-b0042b174/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                                <br><br>
+                                <button class="proj_btn btn-lg btn-block"><a target="_blank" href="https://github.com/kothawleprem/StudentsBay">Project Repository Link</a></button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+
 {% endblock body %}
 
 
