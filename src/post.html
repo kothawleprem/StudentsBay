@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>Posts | Students Bay</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md fixed-top" id="navs">
+            <a class="navbar-brand" href="index.html" style="color: #000066; margin-left: 10px; margin-top: 5px;">
+                <h1 class="brand" style="font-family: Cookie;">Students Bay <i class="fas fa-graduation-cap"></i></h1>
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="posts.html"><h5 class="items"><i class="fas fa-mail-bulk"></i> &nbsp; Posts</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html"><h5 class="items"><i class="fas fa-user-alt"></i> &nbsp; Profile</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><h5 class="items"><i class="fas fa-sign-in-alt"></i> &nbsp; Log In</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html"><h5 class="items"><i class="fas fa-user-plus"></i> &nbsp; Register</h5></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <br><br><br><br><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card post_card">
+                        <div class="card-body">
+                            {% extends 'base.html' %}
+                            {% block title %} Post {% endblock title %}
+                            {% block body %}
+                            {% load humanize %}
+                            <h2 class="blog-post-title"><i>{{post.title}}</i></h2>
+                            <p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.publisher}}</a></p>
+                            <hr>
+                            <br>
+                            <h6>{{post.content}}</h6>
+                            <br>
+                            {% if user.is_authenticated %}
+                            <h3>Comments ({{comments.count}})</h3>
+                            <form action="/posts/postComment" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input type="text" class="form-control comment_box" name="comment" placeholder="Comment something">
+                                </div>
+                                <input type="hidden" name="postSno" value="{{post.sno}}">
+                                <button type="submit" class="comment_submit btn-lg">Submit</button>
+                            </form>
+                            <br>
+                            {% for comment in comments %}
+                            <div class="row">
+                                <div class="col-md-12"> 
+                                    <h4><i class="fas fa-user-alt"></i> &nbsp; <b>{{comment.user.username}}</b> at {{comment.timeStamp | naturaltime}} </h4>
+                                    <hr>
+                                    <h6>{{comment.comment}}</h6>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            {% endfor %}
+                            {% else %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Comments ({{comments.count}})</h3>
+                                    <h5>Please Login to comment</h5>
+                                </div>
+                            </div>
+                            
+                            <br>
+
+                            {% for comment in comments %}
+                            <div class="row">
+                                <div class="col-md-12"> 
+                                    <h4><i class="fas fa-user-alt"></i> &nbsp; <b> {{comment.user.username}} </b> at {{comment.timeStamp | naturaltime}} </h4>
+                                    <hr>
+                                    <h6>{{comment.comment}}</h6>
+                                </div>
+                            </div>
+                            
+                            {% endfor %}
+                            {% endif %}
+                            {% endblock body %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <footer>
+            <h4><i>Made by Bug Hunters 2021</i></h4>
+        </footer>
+    </body>
+</html>

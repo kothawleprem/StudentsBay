@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <title>Students Bay</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap" rel="stylesheet">
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md fixed-top" id="navs">
+            <a class="navbar-brand" href="index.html"  style="color: #000066; margin-left: 10px; margin-top: 5px;">
+                <h1 class="brand" style="font-family: Cookie;">Students Bay <i class="fas fa-graduation-cap"></i></h1>
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="posts.html"><h5 class="items"><i class="fas fa-mail-bulk"></i> &nbsp; Posts</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><h5 class="items"><i class="fas fa-sign-in-alt"></i> &nbsp; Log In</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html"><h5 class="items"><i class="fas fa-user-plus"></i> &nbsp; Register</h5></a>
+                    </li>
+                    <br>
+                    <form method="get" action="/search" class="d-flex search_box">
+                        <input class="form-control search" type="search" placeholder="Search" name="query" id="query">
+                        <button class="search_btn" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+
+        <br><br><br>
+
+        <div class="jumbotron intro_div">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card intro_card animate__animated animate__zoomIn">
+                            <div class="card-body">
+                                <h1 style="font-family: Cookie;">Students Bay &nbsp; <i class="fas fa-graduation-cap"></i></h1>
+                                <hr class="intro_hr" align="left">
+                                <br>
+                                <h6>
+                                    Students Bay is your very own portal for all alerts and notifications concerned with your college.
+                                    <br><br><br>
+                                    Find out what features are we providing mentioned below...
+                                </h6>
+                                <br>
+                                <h1><i class="fas fa-arrow-alt-circle-down"></i></h1>
+                            </div>
+                        </div>  
+                    </div>      
+                </div>
+            </div> 
+        </div>
+
+        <div class="container">
+            <h2><i class="fas fa-question-circle"></i> &nbsp; What we provide</h2>
+            <hr>
+            <br>
+            <div class="row full_provide_div">
+                <div class="col-md-4">
+                    <div class="card provide_card animate__animated animate__fadeInLeft">
+                        <img class="card-img-top" src="../assets/images/create.png" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title" style="margin-top: 17px;">Create Posts</h4>
+                            <p class="card-text">Create important alerts and announcements about your institution.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card provide_card animate__animated animate__fadeInLeft">
+                        <img class="card-img-top" src="../assets/images/email.png" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Posts as Emails</h4>
+                            <p class="card-text">Students can recieve emails of the post uploaded by the teacher.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card provide_card animate__animated animate__fadeInLeft">
+                        <img class="card-img-top" src="../assets/images/contact.png" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title" style="margin-top: 33px;">Connect</h4>
+                            <p class="card-text">Send your messages, grieviences and get them answered.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br>
+
+        <div class="contact_div">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2><i class="fas fa-file"></i> &nbsp; Contact</h2>
+                        <hr>
+                        <br>
+                        <form>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <input type="text" class="form-control contact_form" placeholder="Your Name">
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <input type="text" class="form-control contact_form" placeholder="Contact Number">
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <input type="text" class="form-control contact_form" placeholder="Email ID">
+                            </div>
+                            <br>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <input type="text" class="form-control contact_form" placeholder="Message">
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary">Send Response</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card about_card animate__animated animate__bounceIn">
+                            <div class="card-body">
+                                <h2><i class="fas fa-address-card"></i> &nbsp; About Us</h2>
+                                <hr>
+                                <br>
+                                <h4 style="font-family: Spectral SC;">Bug Hunters <i class="fas fa-bug"></i></h4>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6 bio">
+                                        <h5>Prem Kothawle</h5>
+                                        <hr>
+                                        <a href="https://github.com/kothawleprem" target="_blank"><i class="fab fa-github"></i></a>
+                                        <a href="https://in.linkedin.com/public-profile/in/premkothawle?challengeId=AQGGrVILuc7mNQAAAXdIXRqTv00S5rmv_j21Vz_wRu8nQDt14KyNpn4hUdXcizuLx17BkvKyp97b-AttVulTKk_tZaVB0qZbUg&submissionId=98038d91-ee5b-5e16-1547-bd78670a3a16" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                    
+                                    <div class="col-md-6 bio">
+                                        <h5>Chinmay Karmokar</h5>
+                                        <hr>
+                                        <a href="https://github.com/chinmaykarmokar" target="_blank"><i class="fab fa-github"></i></a>
+                                        <a href="https://www.linkedin.com/in/chinmay-karmokar-b0042b174/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                                <br><br>
+                                <button class="proj_btn btn-lg btn-block"><a target="_blank" href="https://github.com/kothawleprem/StudentsBay">Project Repository Link</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <h4><i>Made by Bug Hunters 2021</i></h4>
+        </footer>
+
+    </body>
+</html>

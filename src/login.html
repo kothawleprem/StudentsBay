@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>Login | Students Bay</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <style>
+            body {
+                background-image: url("../assets/images/util.jpg");
+                background-size: cover;
+                margin-bottom: 50px !important;
+            }
+
+            ::placeholder {
+                color: #fff !important;
+            }
+
+            .fa-user {
+                color: #fff;
+            }
+
+            .fa-unlock-alt {
+                color: #fff;
+            }
+
+            input:focus { 
+                outline: none !important;
+                background-color: rgba(255, 255, 255, 0) !important;
+                color: #fff !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md fixed-top" id="navs">
+            <a class="navbar-brand" href="index.html" style="color: #000066; margin-left: 10px; margin-top: 5px;">
+                <h1 class="brand" style="font-family: Cookie;">Students Bay <i class="fas fa-graduation-cap"></i></h1>
+            </a>
+        
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars"></i>
+            </span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="posts.html"><h5 class="items"><i class="fas fa-mail-bulk"></i> &nbsp; Posts</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><h5 class="items"><i class="fas fa-sign-in-alt"></i> &nbsp; Log In</h5></a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html"><h5 class="items"><i class="fas fa-user-plus"></i> &nbsp; Register</h5></a>
+                    </li>
+                    <br>
+                    <form method="get" action="/search" class="d-flex search_box">
+                        <input class="form-control search" type="search" placeholder="Search" name="query" id="query">
+                        <button class="search_btn" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+
+        <br><br><br><br><br>
+
+        <div class="container">
+            <div class="row">
+                <div class="card login_card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <img src="../assets/images/login.png" alt="Card image" style="width:100%">
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <h2 align="center">LOGIN</h2>
+                                <hr class="login_hr">
+                                <br>
+                                <form>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <input type="text" class="form-control login_form" placeholder="Username">
+                                    </div>
+                                    <br>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <i class="fas fa-unlock-alt"></i>
+                                        </div>
+                                        <input type="password" class="form-control login_form" placeholder="Password">
+                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block">Log In</button>
+                                </form>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <footer>
+            <h4><i>Made by Bug Hunters 2021</i></h4>
+        </footer>
+    </body>
+</html>
