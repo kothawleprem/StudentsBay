@@ -44,7 +44,7 @@
 {% else %}
 Please Login to comment
 {% endif %}
-<form action='/posts/emailme' method='post'>
+{% comment %} <form action='/posts/emailme' method='post'>
     {% csrf_token %}
     <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -52,7 +52,7 @@ Please Login to comment
         </div>
         <input type="text" class="form-control login_form" name="uemail"  placeholder="Email"> 
     </div>
-    <button type="submit" class="btn btn-success btn-lg btn-block" name="{{post.content | safe}}">Submit</button>
+    <button type="submit" class="btn btn-success btn-lg btn-block" name="{{post.content | safe}}">Submit</button> {% endcomment %}
 
 <div class="row">
     <div class="col-md-12">
