@@ -45,7 +45,7 @@
                             <hr class="pop_post_hr" align="left">
                             <br>
                             <p class="card-text">
-                            <div class="preview">{{post.content| safe |truncatechars:300}}</div></p>
+                            <div class="preview">{{post.content | safe | truncatechars:300}}</div></p>
                             <br>
                             <a href="{{post.slug}}" class="btn btn-info">Continue reading</a>
                         </div>
@@ -56,7 +56,7 @@
 </div>
        
         {% endfor %}
-
+<br><br>
       
 {% endblock body %}
 

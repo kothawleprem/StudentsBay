@@ -19,6 +19,9 @@
     width: 150px;
 }
 </style>
+<br>
+<br>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -30,7 +33,18 @@
                             <hr>
                             <br>
                             <h6>{{post.content | safe}}</h6>
-                            <br>
+                            <br> 
+                            <h3>Want this Post in Your Inbox?</h3>
+                            <form action='/posts/emailme' method='post'>
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <i class="fas fa-email"></i>
+        </div>
+        <input type="text" class="form-control  comment_box" name="uemail" placeholder="Enter Email Here"> 
+    </div>
+    <button type="submit" class="comment_submit btn-lg" >Send Mail!</button> 
+</form>
                             {% if user.is_authenticated %}
                             <h3>Comment Your Queries!!!</h3>
                             <form action="/posts/postComment" method="post">
@@ -44,16 +58,6 @@
 {% else %}
 Please Login to comment
 {% endif %}
-{% comment %} <form action='/posts/emailme' method='post'>
-    {% csrf_token %}
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <i class="fas fa-email"></i>
-        </div>
-        <input type="text" class="form-control login_form" name="uemail"  placeholder="Email"> 
-    </div>
-    <button type="submit" class="btn btn-success btn-lg btn-block" name="{{post.content | safe}}">Submit</button> {% endcomment %}
-
 <div class="row">
     <div class="col-md-12">
         <h3>Comments ({{comments.count}})</h3>
@@ -75,7 +79,7 @@ Please Login to comment
 </div>
 </div>
 </div>
-</body>
+<br>
 
 {% endblock body %}
 
