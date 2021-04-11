@@ -29,7 +29,7 @@
                             <p class="blog-post-meta">{{post.timeStamp}} by <a href="/about">{{post.publisher}}</a></p>
                             <hr>
                             <br>
-                            <h6>{{post.content}}</h6>
+                            <h6>{{post.content | safe}}</h6>
                             <br>
                             {% if user.is_authenticated %}
                             <h3>Comments ({{comments.count}})</h3>
