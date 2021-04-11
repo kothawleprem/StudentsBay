@@ -2,25 +2,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-      crossorigin="anonymous"
-
-    />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <title>Students Bay</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Spectral+SC&display=swap" rel="stylesheet">
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <title>{% block title %}{% endblock title %}</title>
   </head>
@@ -32,6 +26,10 @@
 
 .navbar-nav {
     padding: 10px;
+}
+
+.nav-item {
+    margin-top: 8px;
 }
 
 .nav-link {
@@ -60,9 +58,13 @@
     box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
 }
 
+.search_box {
+    margin-top: 8px;
+}
+
 .intro_div {
     height: 500px;
-    background-image: url("media/intro.jpg");
+    background-image: url("../assets/images/intro.jpg");
     background-size: cover;
 }
 
@@ -75,6 +77,8 @@
     box-shadow: 0px 0px 5px 2.5px rgba(0,0,0,0.5);
     height: 400px;
     padding: 20px;
+    animation: zoomIn;
+    animation-duration: 2s;
 }
 
 .intro_hr {
@@ -122,6 +126,8 @@
     border: none;
     height: 400px;
     box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    animation: fadeInLeft;
+    animation-duration: 5s;
 }
 
 .popular_posts {
@@ -196,6 +202,17 @@
     margin-right: 5px;
 }
 
+.fa-github {
+    font-size: 55px;
+    color: #000;
+}
+
+.fa-linkedin-in {
+    margin-left: 20px;
+    font-size: 55px;
+    color: #0077b5;
+}
+
 .contact_card {
     border: none;
     border-radius: 20px;
@@ -232,6 +249,28 @@
     border: none;
     border-radius: 20px;
     box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    padding: 15px;
+    padding-left: 20px;
+    animation: bounceIn;
+    animation-duration: 7s;
+}
+
+.bio {
+    margin-top: 10px;
+}
+
+.proj_btn {
+    background-color: #000066;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+    height: 55px;
+    padding: 10px;
+}
+
+.proj_btn > a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .login_card {
@@ -274,44 +313,290 @@
     background-color: blueviolet;
 }
 
-.about_card {
-    background-color: #f0f2f2;
+.post_card {
+    border: none;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+}
+
+.comment_box {
+    border: none;
+    height: 50px;
+    border-radius: 0px;
+    border-bottom: 2px solid #ff0000;
+}
+
+.comment_submit {
+    background-color: #000066;
+    color: #fff;
     border: none;
     border-radius: 20px;
-    box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
-    padding: 15px;
-    padding-left: 20px;
-}
-
-.bio {
-    margin-top: 10px;
-}
-
-.proj_btn {
-    background-color: #000066;
-    border: none;
-    border-radius: 15px;
     box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
-    height: 55px;
-    padding: 10px;
+    width: 150px;
 }
 
-.proj_btn > a {
-    color: #fff;
-    text-decoration: none;
+footer {
+    background-color: #f0f0f0;
+    height: 80px;
+    padding: 30px;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px 0px 8px 4px rgba(0, 0, 0, 0.18);
+    /* bottom: 0px; */
+    position: absolute;
+    width: 100%;
 }
 
-.fa-github {
-    font-size: 55px;
-    color: #000;
+/* Media Queries */
+@media screen and (min-width: 425px) {
+    .provide_card {
+        border-radius: 20px;
+        margin-top: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 10px;
+        border: none;
+        height: 400px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    }    
 }
 
-.fa-linkedin-in {
-    margin-left: 20px;
-    font-size: 55px;
-    color: #0077b5;
+@media screen and (min-width: 375px) {
+    .intro_card {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        box-shadow: 0px 0px 5px 2.5px rgba(0,0,0,0.5);
+        height: 430px;
+        padding: 20px;
+    }
+
+    .provide_card {
+        border-radius: 20px;
+        margin-top: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 10px;
+        border: none;
+        height: 400px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    }
+    
+    .about_card {
+        background-color: #f0f2f2;
+        margin-left: -20px;
+        margin-right: -20px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+        padding: 15px;
+        padding-left: 20px;
+    }
 }
 
+@media screen and (min-width: 320px) {
+    .brand {
+        font-size: 38px;
+    }
+
+    .intro_div {
+        height: 550px;
+    }
+
+    .intro_card {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: #fff;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        box-shadow: 0px 0px 5px 2.5px rgba(0,0,0,0.5);
+        height: 470px;
+        padding: 20px;
+    }
+
+    .provide_card {
+        border-radius: 20px;
+        margin-top: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 10px;
+        border: none;
+        height: 400px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    }  
+    
+    .about_card {
+        background-color: #f0f2f2;
+        margin-left: -35px;
+        margin-right: -35px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+        padding: 15px;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .brand {
+        font-size: 25px;
+    }
+
+    .nav-item {
+        margin-top: 13px;
+    }
+
+    .items {
+        font-size: 11px;
+    }
+
+    .search {
+        font-size: 11px;
+    }
+
+    .search_btn {
+        font-size: 10px;
+        height: 30px;
+        width: 35px;
+    }
+
+    .provide_card {
+        border-radius: 20px;
+        /* margin-top: 30px;
+        margin-right: 15px !important; */
+        /* margin-right: 15px; */
+        padding: 10px;
+        border: none;
+        height: 350px;
+        width: 220px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    }
+    
+    .full_provide_div {
+        margin-left: -40px;
+    }
+
+    .about_card {
+        background-color: #f0f2f2;
+        margin-left: 0px;
+        margin-right: -15px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+        padding: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .brand {
+        font-size: 30px;
+    }
+
+    .nav-item {
+        margin-top: 13px;
+    }
+
+    .items {
+        font-size: 15px;
+    }
+
+    .search {
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+    .search_btn {
+        font-size: 15px;
+        height: 40px;
+        width: 50px;
+    }
+
+    .provide_card {
+        border-radius: 20px;
+        /* margin-top: 30px;
+        margin-right: 15px !important; */
+        /* margin-right: 15px; */
+        padding: 10px;
+        border: none;
+        height: 350px;
+        width: 300px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    }
+    
+    /* .full_provide_div {
+        margin-left: -10px;
+    } */
+
+    .about_card {
+        background-color: #f0f2f2;
+        font-size: 15px;
+        margin-left: 0px;
+        margin-right: -15px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+        padding: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .brand {
+        font-size: 38px;
+    }
+
+    .nav-item {
+        margin-top: 13px;
+    }
+
+    .items {
+        font-size: 15px;
+    }
+
+    .search {
+        margin-top: 5px;
+        font-size: 13px;
+    }
+
+    .search_btn {
+        font-size: 15px;
+        height: 40px;
+        width: 50px;
+    }
+
+    .provide_card {
+        border-radius: 20px;
+        /* margin-top: 30px;
+        margin-right: 15px !important; */
+        /* margin-right: 15px; */
+        padding: 10px;
+        border: none;
+        height: 400px;
+        width: 350px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+    }
+    
+    /* .full_provide_div {
+        margin-left: -10px;
+    } */
+
+    .about_card {
+        background-color: #f0f2f2;
+        font-size: 12px;
+        margin-left: 0px;
+        margin-right: -15px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 0px 0px 8px 4px rgba(0,0,0,0.18);
+        padding: 15px;
+        padding-left: 15px;
+    }
+}
 </style>
   <body>
         <nav class="navbar navbar-expand-md fixed-top" id="navs">
@@ -362,6 +647,10 @@
      
 
     {% block body %} {% endblock body %}
+    <footer>
+    <h4><i>Made by Bug Hunters 2021</i></h4>
+    </footer>
+     
     {% block js %}
     {% endblock js %}
 
